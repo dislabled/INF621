@@ -1,0 +1,7 @@
+hei
+dette er en
+liten tekstfil hvor 
+du 
+kan teste koden 
+
+din

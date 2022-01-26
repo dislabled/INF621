@@ -1,0 +1,72 @@
+Øving 4
+INF621 - Høstsemesteret 2021
+Sammendrag
+Øvingsoppgavene er ikke obligatoriske, men vi anbefaler likevel at du gjør
+de og leverer de innen fristen — Den eneste måten å lære å programmere på
+er ved å programmere. Ved å gjøre oppgavene får du også testet deg selv og
+sjekket at du forstår begrepene. Du skal levere én zip-fil, oving4.zip, som
+inneholder filene oppg1.py–oppg2.py. For å komprimere en eller flere filer til
+en zip-fil høyreklikker du filene (i dette tilfellet oppg1.py–oppg2.py) i maskinens filnavigasjonsprogram og velger Komprimer eller Send til → Komprimert
+mappe. Frist: Torsdag 2. desember kl 23:59
+
+1 Terninger (50%)
+Skriv en funksjon for hver deloppgave. Svar leveres på fil med navn oppg1.py.
+1.a
+Kast ti terninger en etter en. Plott kurver som viser utviklingen av
+• gjennomsnittsverdien oppnådd med terningene kastet så langt,
+• minimumsverdien oppnådd med terningene kastet så langt, og
+• maksimumsverdien oppnådd med terningene kastet så langt.
+1.b
+Gjør ti kast med to terninger. Lag et punktdiagram med ett punkt for hvert kast,
+der x-koordinaten (y-koordinaten) tilsvarer verdien oppnådd med første (andre)
+terning.
+1.c
+Gjør 100 kast med en terning. Lag et stolpediagram som viser hvor mange av kastene
+som ga hver av verdiene 1, . . . , 6.
+1.d
+Gjør 100 kast med en blå og en rød terning. Lag et diagram med seks par bestående
+av en rød og en blå stolpe. Diagrammet skal for hver av terningene vise hvor mange
+av kastene som ga hver av verdiene 1, . . . , 6.
+
+1
+
+2 Analyse av folketallet i Norge (50%)
+Svar leveres på fil med navn oppg2.py
+Flere norske kommuner er preget av fraflytting. Statistisk sentralbyrå gir på https:
+//data.ssb.no/api/v0/dataset/26975.json?lang=no oversikt over folketallsutviklingen i norske kommuner fra 1986 til 2021. Dataene er gitt på json-format.
+Hvis nettleseren din ikke gjør det mulig å visualisere dataene, kan du bruke https:
+//jsonformatter.org/json-parser til dette.
+2.a
+Gjør deg kjent med hvordan dataene er strukturerte. Observer at det finnes data
+for totalt 359 kommuner, og at hver kommune har en egen id. Data du vil ha nytte
+av finner du under:
+• dataset/dimension/Region/category/index: En indeks for hver id
+• dataset/dimension/Region/category/label: Kommunenavn for hver id
+• dataset/value: Folketall
+For hver kommune finnes det folketall for hvert av årene 1986, . . . , 2021, altså 36
+år. Under dataset/value finner du totalt 359 · 36 = 12924 folketallsverdier. De 36
+første er befolkningen i kommunen med indeks 0 i årene 1986, . . . , 2021. De 36 neste
+er befolkningen i kommunen med indeks 1 i årene 1986, . . . , 2021, etc.
+Ingen innlevering i denne deloppgaven.
+2.b
+Bruk modulene json og requests til å hente data fra nettsiden inn i din egen
+pythonkode: Lag først en oppslagstabell (dict) som svarer til hele datamengden.
+Plukk deretter ut de data du trenger i form av
+• en oppslagstabell som svarer til dataset/dimension/Region/category/index,
+• en oppslagstabell som svarer til dataset/dimension/Region/category/label,
+• og en liste som svarer til dataset/value
+Vi går ut fra at årene dataene er gitt for ligger fast, og dermed kan hardkodes hos
+oss. Merk imidlertid at koden vår ikke lenger vil fungere dersom datasettet utvides
+til f.eks. 2022. Idéelt sett burde koden lese hvilke år dataene er gitt for fra nettsiden,
+men dette er ikke påkrevd i oppgaven.
+2.c
+Blant kommunene med positiv verdi i dataset/value hvert år, plukk ut de åtte
+kommunene med størst relativ nedgang fra 1986 til 2021 (minst forhold mellom
+folketallene i 2021 og 1986). Lag et stolpediagram over disse kommunene, hvor
+folketallene i 1986 og 2021 presenteres med hver sin farge.
+2.d
+Finn kommunen med størst relativ nedgang fra 1986 til 2021. Lag et kurveplott
+over foketallsutviklingen i kommunen fra 1986 til 2021.
+
+2
+
